@@ -1,0 +1,9 @@
+version: "3.2"
+
+services:
+  item-service:
+    volumes:
+      - "./item-service:/app"
+    command: ["yarn", "dev"]
+    build:
+      context: "./item-service"

@@ -1,0 +1,47 @@
+version: "3.2"
+
+services:
+  gateway-proxy:
+    image: kunokdev/gateway-proxy:${TAG:-latest}
+    restart: always
+    ports:
+      - "5000:80"
+    networks:
+      - private-network
+    environment:
+      - "USER_SERVICE_URL=http://user-service"
+
+  user-service:
+    image: kunokdev/user-service:${TAG:-latest}
+    restart: always
+    networks:
+      - private-network
+    environment:
+      - "MONGO_URL=mongodb://mongo"
+
+  item-service:
+    image: kunokdev/item-service:${TAG:-latest}
+    restart: always
+    networks:
+      - private-network
+    environment:
+      - "MONGO_URL=mongodb://mongo"
+      - "INVENTORY_SERVICE_URL=http://inventory-service"
+
+  inventory-service:
+    image: kunokdev/inventory-service:${TAG:-latest}
+    restart: always
+    networks:
+      - private-network
+    environment:
+      - "MONGO_URL=mongodb://mongo"
+
+  mongo:
+    image: mongo:${MONGO_TAG-latest}
+    volumes:
+      - ./data:/data/db
+    networks:
+      - private-network
+
+networks:
+  private-network:

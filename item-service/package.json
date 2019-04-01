@@ -1,0 +1,15 @@
+{
+  "name": "item-service",
+  "version": "1.0.0",
+  "description": "Example item service",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js"
+  },
+  "author": "kunokdev",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
