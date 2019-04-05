@@ -16,7 +16,7 @@ To persist filesystem changes, we use volumes to link whole container workdir to
 
 > Following this technique, we can use all Docker features the same way we’d use it in production, such as; run whole network with a single command, control how services have access among themselves and which are exposed to the outside.
 
-📋 Example
+## 📋 Example
 
 Let’s assume we want to modify item-service and run all other services in the same way as we do it in production.
 
