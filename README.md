@@ -2,6 +2,8 @@
 
 This repository is example of setup described within this blog: https://medium.com/@kunokdev/convenient-microservices-development-environment-with-docker-compose-8109f012b961
 
+![Cover](https://cdn-images-1.medium.com/max/1600/1*mQYvxyb44m6QKXCGQAirSA.jpeg)
+
 ## 🤢 Problem to solve
 
 Traditionally, in order to run development mode, developer would be forced to run each service individually and manage network in a very unconventional way. Difference between production and development environments would be too large and it would be hard to debug when things start breaking in production due to difference between environments. Creating additional set of Dockerfile(s) is terrible idea as well. We need approach which allows us to develop with current Dockerfile(s) and as little difference between environments as possible. We also need to persist changes that are made within containers. Finally, we want to run whole development environment with a single command.
@@ -163,6 +165,8 @@ And corresponding Dockerfile:
  ```
  
  Now when we make changes within enhanced service, they will be applied and server should be restarted:
+ 
+ ![Screenshot showing changes were applied](https://cdn-images-1.medium.com/max/1600/0*0alT3_qmoJMSUG6V.png)
  
  Now you can develop your microservice, save changes and those will be applied. This is very convenient because you can easily reproduce production, make some changes, see how it works together with other services, and then push further. Very agile I’d say.
  
